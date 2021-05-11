@@ -3,9 +3,10 @@ import java.io.File;
 import java.io.FileReader;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.util.Scanner;
 
 public class Booter {
-    static void main(String[] args)
+    public static void main(String[] args)
     {
         try
         {
@@ -26,6 +27,11 @@ public class Booter {
             }
             pin.close();
             server.start();
+            Scanner in = new Scanner(System.in);
+            while(true)
+            {
+
+            }
         }
         catch (Exception e)
         {
