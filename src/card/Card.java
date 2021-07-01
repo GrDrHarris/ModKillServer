@@ -1,8 +1,32 @@
 package card;
 
-abstract public class Card {
+import KillEvent.CardUseEvent;
+
+import java.util.concurrent.BlockingQueue;
+
+public abstract class Card {
+    private int typ;
     private int point;
-    //1~13 -> A,2,...,K
-    private int type;
-    //1红桃 2方片 3黑桃 4草花
+    private String name;
+    public Card(int t,int p)
+    {
+        typ=t;
+        point=p;
+    }
+    public int gettype()
+    {
+        return typ;
+    }
+    public int getpoint()
+    {
+        return point;
+    }
+    abstract public void getinfo(BlockingQueue<String> in);
+    abstract public CardUseEvent getevent();
+    @Override
+    public String toString()
+    {
+        return name+" "+typ+" "+point+"\n";
+    }
+    //todo move all functions into Carduesevent
 }
